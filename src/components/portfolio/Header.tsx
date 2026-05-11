@@ -34,7 +34,7 @@ const Header = () => {
       </div>
 
       <header
-        className="fixed top-0 left-1/2 -translate-x-1/2 z-50 w-[min(95%,1100px)] transition-all duration-300"
+        className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[min(95%,1100px)] transition-all duration-300"
         style={{ opacity: headerOpacity, transform: `translateX(-50%) scale(${headerScale})` }}
       >
       <nav className="glass rounded-full px-6 py-3 flex items-center justify-between shadow-soft backdrop-blur-xl border border-white/10">
