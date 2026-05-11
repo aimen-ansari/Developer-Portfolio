@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Whimsical Lavender & Midnight Slate */
+    --background: 230 30% 7%;
+    --foreground: 270 30% 95%;
+
+    --card: 232 28% 10%;
+    --card-foreground: 270 30% 95%;
+
+    --popover: 232 28% 10%;
+    --popover-foreground: 270 30% 95%;
+
+    --primary: 265 70% 78%;
+    --primary-foreground: 230 30% 7%;
+
+    --secondary: 232 25% 16%;
+    --secondary-foreground: 270 30% 95%;
+
+    --muted: 232 20% 14%;
+    --muted-foreground: 260 15% 70%;
+
+    --accent: 285 65% 80%;
+    --accent-foreground: 230 30% 7%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 25% 22%;
+    --input: 260 25% 18%;
+    --ring: 265 70% 78%;
+
+    --radius: 1rem;
+
+    /* Brand tokens */
+    --lavender: 265 75% 80%;
+    --lavender-soft: 280 70% 88%;
+    --lavender-glow: 270 90% 75%;
+    --midnight: 232 35% 9%;
+    --midnight-deep: 230 40% 5%;
+    --slate-soft: 232 22% 18%;
+    --pearl: 280 30% 96%;
+
+    --gradient-hero: radial-gradient(ellipse at top, hsl(265 60% 25% / 0.6), transparent 60%), radial-gradient(ellipse at bottom right, hsl(285 60% 30% / 0.4), transparent 50%), linear-gradient(180deg, hsl(var(--midnight-deep)), hsl(var(--midnight)));
+    --gradient-lavender: linear-gradient(135deg, hsl(var(--lavender)), hsl(var(--lavender-soft)));
+    --gradient-text: linear-gradient(135deg, hsl(var(--pearl)), hsl(var(--lavender-soft)) 60%, hsl(var(--lavender)));
+    --gradient-card: linear-gradient(145deg, hsl(232 30% 13% / 0.7), hsl(260 30% 11% / 0.4));
+
+    --glass-bg: hsl(232 30% 12% / 0.55);
+    --glass-border: hsl(270 40% 70% / 0.18);
+
+    --shadow-glow: 0 0 60px -10px hsl(var(--lavender-glow) / 0.5);
+    --shadow-soft: 0 20px 60px -20px hsl(265 80% 30% / 0.5);
+    --shadow-elegant: 0 30px 80px -30px hsl(265 60% 20% / 0.7);
+
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-elegant: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+  ::selection { @apply bg-primary/40 text-foreground; }
+}
+
+@layer components {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid var(--glass-border);
+  }
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(270 40% 70% / 0.12);
+  }
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .serif { font-family: 'Cormorant Garamond', serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  .hover-glow {
+    transition: all 0.5s var(--transition-elegant);
+  }
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+    border-color: hsl(var(--lavender) / 0.5);
+    transform: translateY(-4px);
+  }
+  .pastel-glow:hover {
+    text-shadow: 0 0 24px hsl(var(--lavender-glow) / 0.7), 0 0 48px hsl(var(--lavender-soft) / 0.4);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.9s var(--transition-elegant);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .grain::before {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    background-image: radial-gradient(hsl(270 40% 80% / 0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.5;
+  }
+}
