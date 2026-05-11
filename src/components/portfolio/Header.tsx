@@ -12,7 +12,7 @@ const Header = () => (
     <nav className="glass rounded-full px-6 py-3 flex items-center justify-between shadow-soft">
       <a href="#home" className="serif text-xl tracking-wide">
         <span className="text-gradient font-semibold">Aimen</span>
-        <span className="text-muted-foreground italic"> .dev</span>
+        <span className="text-muted-foreground italic">Ansari</span>
       </a>
       <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
         {links.map((l) => (
