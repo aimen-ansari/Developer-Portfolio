@@ -31,7 +31,7 @@ const projects = [
     desc: "A modern animated portfolio experience focused on elegant UI design, smooth interactions, and responsive frontend architecture.",
     stack: ["React.js", "Tailwind CSS", "GSAP"],
     accent: "from-accent/25 to-lavender-soft/20",
-    link: "https://musicianportfolio.com/",
+    link: "https://musicianportfolio.netlify.app/",
   },
    {
     title: "Modern Exports",
